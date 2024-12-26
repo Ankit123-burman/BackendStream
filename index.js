@@ -9,6 +9,10 @@ const port = 5000
 
 app.use(express.static(path.join(__dirname,'video')))
 
+app.get('/',(req,res)=>{
+    res.send('Hello....')
+})
+
 app.get('/video',(req,res)=>{
     const videoPath = path.join(__dirname,'video','videoplayback.mp4')
     const stat = fs.statSync(videoPath)
